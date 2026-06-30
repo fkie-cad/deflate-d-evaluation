@@ -1,0 +1,18 @@
+# The reformatter under evaluation. Install the deflate-d package (the harness
+# does `from deflated import transform`), e.g. `pip install -e ../deflate-d`.
+# deflate-d
+
+# Token counting backends. Each is optional and imported lazily; install only
+# the providers you intend to measure.
+tiktoken==0.13.0     # OpenAI / GPT — local, offline, free (version-pinned; counts are exact)
+anthropic>=0.40      # Claude — free count_tokens endpoint (needs ANTHROPIC_API_KEY); also the RQ2 Batch API
+google-genai>=0.3    # Gemini — free count_tokens endpoint (needs GEMINI_API_KEY)
+
+# Analysis. Required by the RQ1 baseline comparison (baselines.py) and the RQ2
+# bootstrap confidence intervals (rq2/metrics.py).
+numpy>=1.24
+sacrebleu>=2.4       # BLEU-4 for the RQ2 summarization task (rq2/metrics.py)
+
+# Optional, build-time only:
+#   llmlingua                    # RQ1 B3 baseline — `python -m evaluation.baselines --llmlingua RATE`
+#   huggingface_hub, pyarrow     # regenerate the CAPYBARA JSONL (see datasets/README.md)

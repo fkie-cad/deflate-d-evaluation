@@ -1,0 +1,42 @@
+# API keys — NEVER commit these
+evaluation/CLAUDE_API_KEY
+evaluation/GEMINI_API_KEY
+*_API_KEY
+*.key
+
+# Third-party datasets (see evaluation/datasets/README.md for sources)
+evaluation/datasets/**
+!evaluation/datasets/README.md
+!evaluation/datasets/capybara/
+!evaluation/datasets/capybara/build_capybara_jsonl.py
+
+# Generated / regenerable artifacts
+evaluation/decompiled/
+evaluation/deflated/
+evaluation/results/
+evaluation/figures/
+evaluation/coreutils_bin/
+evaluation/testbins/bin/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
